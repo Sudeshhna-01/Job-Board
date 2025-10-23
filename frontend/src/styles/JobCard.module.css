@@ -1,0 +1,155 @@
+.jobCard {
+  background-color: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  transition: all 0.2s ease-in-out;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.jobCard:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.jobHeader {
+  margin-bottom: 1rem;
+}
+
+.jobTitle {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  line-height: 1.3;
+}
+
+.jobLink {
+  color: var(--text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+.jobLink:hover {
+  color: var(--primary-color);
+}
+
+.companyInfo {
+  margin-bottom: 0.5rem;
+}
+
+.companyLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.875rem;
+  transition: color 0.2s ease-in-out;
+}
+
+.companyLink:hover {
+  color: var(--primary-hover);
+}
+
+.jobDetails {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.jobMeta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaValue {
+  font-size: 0.875rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.jobDescription {
+  color: var(--text-secondary);
+  line-height: 1.5;
+  margin-bottom: 1rem;
+  flex: 1;
+}
+
+.jobFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.jobStats {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.applicationCount {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.postedDate {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+}
+
+.jobActions {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.viewBtn {
+  padding: 0.5rem 1rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .jobCard {
+    padding: 1rem;
+  }
+
+  .jobMeta {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .jobFooter {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .jobStats {
+    text-align: center;
+  }
+
+  .viewBtn {
+    width: 100%;
+    justify-content: center;
+  }
+}

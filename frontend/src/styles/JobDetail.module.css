@@ -1,0 +1,262 @@
+.jobDetailPage {
+  min-height: 100vh;
+  background-color: var(--surface-color);
+  padding: 2rem 0;
+}
+
+.loadingContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 0;
+  gap: 1rem;
+}
+
+.errorContainer {
+  text-align: center;
+  padding: 4rem 0;
+}
+
+.errorContainer h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.errorContainer p {
+  color: var(--text-secondary);
+  margin-bottom: 2rem;
+}
+
+.breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+  font-size: 0.875rem;
+}
+
+.breadcrumbLink {
+  color: var(--primary-color);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-size: inherit;
+}
+
+.breadcrumbLink:hover {
+  text-decoration: underline;
+}
+
+.breadcrumbSeparator {
+  color: var(--text-secondary);
+}
+
+.breadcrumbCurrent {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.jobDetailGrid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+}
+
+.jobContent {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.jobHeader {
+  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.jobTitle {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 1.5rem;
+  line-height: 1.2;
+}
+
+.jobMeta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.metaValue {
+  font-size: 1rem;
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.jobDescription {
+  margin-bottom: 2rem;
+}
+
+.jobDescription h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.descriptionContent {
+  line-height: 1.7;
+  color: var(--text-primary);
+}
+
+.descriptionContent p {
+  margin-bottom: 1rem;
+}
+
+.applicationSection {
+  padding-top: 2rem;
+  border-top: 1px solid var(--border-color);
+}
+
+.applicationSection h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.loginPrompt,
+.rolePrompt,
+.appliedPrompt,
+.applySection {
+  background-color: var(--surface-color);
+  padding: 1.5rem;
+  border-radius: var(--border-radius);
+  text-align: center;
+}
+
+.loginPrompt p,
+.rolePrompt p,
+.appliedPrompt p,
+.applySection p {
+  margin-bottom: 1rem;
+  color: var(--text-secondary);
+}
+
+.appliedPrompt {
+  background-color: #d1fae5;
+  border: 1px solid #a7f3d0;
+}
+
+.appliedPrompt p {
+  color: #065f46;
+  font-weight: 500;
+}
+
+.jobSidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.companyCard,
+.jobStats {
+  background-color: white;
+  border-radius: var(--border-radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.companyCard h3,
+.jobStats h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: var(--text-primary);
+}
+
+.companyDescription {
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.companyCard .btn {
+  width: 100%;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+
+.companyCard .btn:last-child {
+  margin-bottom: 0;
+}
+
+.statItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.statItem:last-child {
+  border-bottom: none;
+}
+
+.statLabel {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.statValue {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+  .jobDetailPage {
+    padding: 1rem 0;
+  }
+
+  .jobDetailGrid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .jobContent {
+    padding: 1.5rem;
+  }
+
+  .jobTitle {
+    font-size: 2rem;
+  }
+
+  .jobMeta {
+    grid-template-columns: 1fr;
+  }
+
+  .breadcrumb {
+    margin-bottom: 1rem;
+  }
+}

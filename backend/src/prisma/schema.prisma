@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id           Int       @id @default(autoincrement())
+  name         String
+  email        String    @unique
+  password     String
+  role         Role
+  company      Company?
+  applications Application[]
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+
+  @@map("users")
+}
+
+model Company {
+  id          Int    @id @default(autoincrement())
+  name        String
+  description String
+  website     String?
+  userId      Int    @unique
+  user        User   @relation(fields: [userId], references: [id], onDelete: Cascade)
+  jobs        Job[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("companies")
+}
+
+model Job {
+  id          Int    @id @default(autoincrement())
+  title       String
+  description String
+  location    String
+  category    String
+  salary      String?
+  type        String? // Full-time, Part-time, Contract, etc.
+  companyId   Int
+  company     Company @relation(fields: [companyId], references: [id], onDelete: Cascade)
+  applications Application[]
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("jobs")
+}
+
+model Application {
+  id          Int      @id @default(autoincrement())
+  resumeUrl   String
+  coverLetter String?
+  status      Status   @default(PENDING)
+  jobId       Int
+  job         Job      @relation(fields: [jobId], references: [id], onDelete: Cascade)
+  applicantId Int
+  applicant   User     @relation(fields: [applicantId], references: [id], onDelete: Cascade)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("applications")
+}
+
+enum Role {
+  COMPANY
+  APPLICANT
+  ADMIN
+}
+
+enum Status {
+  PENDING
+  REVIEWED
+  ACCEPTED
+  REJECTED
+}
