@@ -104,8 +104,8 @@ npm run dev
 
 ## 🌐 Access the Application
 
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000
+- **Frontend**: https://job-board-zeta-ruddy.vercel.app/
+- **Backend API**: https://job-board-production-c1d3.up.railway.app/
 
 ## 👥 Test Accounts
 
